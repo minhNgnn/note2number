@@ -1,0 +1,43 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+notes2numbers/
+
+# Data (large files, do not commit)
+data/
+
+# OS files
+.DS_Store
+
+# Config with secrets
+configs/bigquery_config.yaml
+
+# Jupyter
+.ipynb_checkpoints/
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+# Keep .tex source files, only ignore generated files
+!*.tex
+
+
