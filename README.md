@@ -1,4 +1,4 @@
-# From Notes to Numbers  
+# From Notes to Numbers
 ### Constructing Disease Severity Scores with NLP-Augmented EHRs
 
 This project develops a framework that integrates text-derived features from clinical notes with structured electronic health records (EHR) using survival analysis and natural language processing (NLP) to improve clinical deterioration prediction.
@@ -21,7 +21,7 @@ This project addresses that gap by:
 
 ### 1. Cohort Construction
 - Data source: MIMIC-IV-ED
-- Population: Adult patients (≥18) with Community-Acquired Pneumonia (CAP)
+- Population: Adult patients (>=18) with Community-Acquired Pneumonia (CAP)
 - Outcome: Deterioration within 72 hours:
   - Respiratory failure
   - Circulatory failure
@@ -61,3 +61,86 @@ This project addresses that gap by:
 ---
 
 ## Project Structure
+
+    ├── notebooks/          # Main experiments (run in Google Colab)
+    ├── src/                # Data processing and modeling code
+    ├── configs/            # Configurations
+    ├── pyproject.toml      # Dependency management (uv)
+    └── README.md
+
+---
+
+## Setup Instructions
+
+### 1. Data Access via Google BigQuery
+
+This project uses MIMIC-IV-ED hosted on Google BigQuery.
+
+Steps:
+1. Obtain access via PhysioNet
+2. Create a Google Cloud project
+3. Enable BigQuery API
+4. Query data:
+
+    SELECT *
+    FROM `physionet-data.mimiciv_ed.edstays`
+    LIMIT 1000
+
+5. Export data to:
+   - Google Drive (recommended for Colab)
+   - Or local storage (CSV/Parquet)
+
+---
+
+### 2. Environment Setup (uv)
+
+Install uv:
+
+    pip install uv
+
+Sync environment:
+
+    uv sync
+
+This installs all dependencies defined in `pyproject.toml`.
+
+---
+
+### 3. Running the Project (Google Colab)
+
+Main experiments were conducted in Google Colab.
+
+Steps:
+1. Open notebook from `notebooks/`
+2. Mount Google Drive:
+
+    from google.colab import drive
+    drive.mount('/content/drive')
+
+3. Load dataset from Drive or exported BigQuery data
+4. Run all cells sequentially
+
+---
+
+## Notes on Data
+
+Due to data usage restrictions:
+- Raw MIMIC data is not included in this repository
+- Users must obtain access independently via PhysioNet
+
+---
+
+## Future Work
+
+- Multimodal models combining text, imaging, and structured data
+- Time-varying survival models
+- External validation across healthcare systems
+- Explainability for clinical deployment
+
+---
+
+## Author
+
+Minh Nguyen
+MSc Data Science, LMU Munich
+Global Connect Fellowship, NTU Singapore
