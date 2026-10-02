@@ -4,7 +4,11 @@
 This project develops a framework that integrates text-derived features from clinical notes with structured electronic health records (EHR) using survival analysis and natural language processing (NLP) to improve clinical deterioration prediction.
 
 <p align="center">
-  <img src="Final_Poster.jpeg" alt="From Notes to Numbers research poster" width="900">
+  <a href="Final_Poster.pdf">
+    <img src="Final_Poster_web.jpeg" alt="From Notes to Numbers research poster" width="900">
+  </a>
+  <br>
+  <em>Click the poster to view the full-resolution version.</em>
 </p>
 
 ---
